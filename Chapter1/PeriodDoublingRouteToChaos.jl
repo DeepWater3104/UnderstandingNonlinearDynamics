@@ -31,7 +31,7 @@ for R_index = 1:R_times
     end
 end
 
-plot(x_plot[1,:], x_plot[2,:], st=:scatter, markersize=0.01, xlims=(2.8, 4.5))
+plot(x_plot[1,:], x_plot[2,:], st=:scatter, markersize=0.01, xlims=(2.8, 4.5), label="")
 savefig("output.png")
 
 
