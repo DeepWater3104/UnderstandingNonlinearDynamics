@@ -1,6 +1,8 @@
 using Plots
 using Printf
 
+# code to visualize the bifurcation diagram of finite-difference equation x[t+] = R(1-x[t])x[t]
+
 function update(R, x)
     x_updated = R*(1-x)*x
     return x_updated
