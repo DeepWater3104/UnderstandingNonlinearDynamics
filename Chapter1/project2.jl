@@ -1,6 +1,6 @@
-using Plots
-
 # code for the comuter project 2 at p.51
+
+using Plots
 
 function updateA(λ, x)
     x_updated = 4*λ*x*(1-x)
