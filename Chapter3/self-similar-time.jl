@@ -24,7 +24,7 @@ time = range(0., NT-1, step=1)
 
 
 p1 = plot(time, f, xlabel="Time[s]", label="")
-p2 = plot(freq, F3, yscale=:log2, xlabel="Frequency[Hz]", ylabel="Power", label="")
+p2 = plot(freq, F3, xscale=:log2, yscale=:log2, xlabel="Frequency[Hz]", ylabel="Power", label="", xlim=(0.001, 0.5))
 #p2 = plot(freq, F3)
 plot(p1, p2, layout=(2,1))
 savefig("self-similar-time.png")
