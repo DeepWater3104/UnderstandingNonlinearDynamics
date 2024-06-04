@@ -24,7 +24,15 @@ A[:, 1] = [0.5, 0.1]
 for i=2:NT
     A[:, i] = toss_dice(coordinate_tri, A[:, i-1])
 end
+
 plot(coordinate_tri[1,:], coordinate_tri[2,:], label="")
 plot!(A[1,:], A[2,:], label="", st=:scatter, color=:black, markersize=0.5)
-
 savefig("fractal-game.png")
+
+anim = Animation()
+for i=1:NT
+    plt = plot(coordinate_tri[1,:], coordinate_tri[2,:], label="")
+    plot!(plt, A[1,1:i], A[2,1:i], label="", st=:scatter, color=:black, markersize=0.5)
+    frame(anim, plt)
+end
+gif(anim, "fractal-game.gif", fps=60)
